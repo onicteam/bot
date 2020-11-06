@@ -127,7 +127,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/nulis?text=${teks}&apiKey=Rr47iNuYO
 if (text.includes("#ytmp3")){
 const teks = text.replace(/#ytmp3 /, "")
 axios.get(`https://mhankbarbar.herokuapp.com/api/yta?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
-    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
+    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down ..\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
@@ -175,26 +175,41 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/wiki?q=${teks}&lang=id&apiKey=R
 if (text.includes("#bkp")){
 const teks = text.replace(/#bkp /, "")
 axios.get(`https://mhankbarbar.herokuapp.com/api/xnxx?url=${teks}&lang=id&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
-    let hasil = `Menurut Wikipedia:\n\n${res.data.result}`;
+    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down..\n\n${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 
 }
 if (text.includes("#yta")){
-const teks = text.replace(/#bkpi /, "")
+const teks = text.replace(/#yta /, "")
 axios.get(`https://mhankbarbar.herokuapp.com/api/yta?url=${teks}&lang=id&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
-    let hasil = `Menurut Wikipedia:\n\n${res.data.result}`;
+    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down.:\n\n${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
 
-if (text.includes("#quetos")){
-const teks = text.replace(/#quetos /, "")
-axios.get(`https://jagokata.com/kata-bijak/acak.html`).then((res) => {
-    let hasil = `Menurut Wikipedia:\n\n${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
+if (text.includes("!quotes"))
+   {
+      var url = 'https://jagokata.com/kata-bijak/acak.html'
+      axios.get(url)
+         .then((result) =>
+         {
+            let $ = cheerio.load(result.data);
+            var author = $('a[class="auteurfbnaam"]').contents().first().text();
+            var kata = $('q[class="fbquote"]').contents().first().text();
+
+            conn.sendMessage(
+               id,
+               `
+     _${kata}_
+        
+    
+	*~${author}*
+         `, MessageType.text
+            );
+
+         });
+   }
 
 if (text == '#help'){
 const corohelp = await get.get('https://covid19.mathdro.id/api/countries/id').json()
