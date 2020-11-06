@@ -12,12 +12,12 @@ const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
 const info = require("./lib/info.js");
 //
-const BotName = 'Onic BOT 🤖'; // Nama Bot Whatsapp
-const instagramlu = 'https://instagram.com/ini.aria'; // Nama Instagramlu cok
-const whatsapplu = '0895-2534-0368'; // Nomor whatsapplu cok
+const BotName = 'ST4RZ BOT 🤖'; // Nama Bot Whatsapp
+const instagramlu = 'https://instagram.com/bintang_nur_pradana'; // Nama Instagramlu cok
+const whatsapplu = '0819-4698-3575'; // Nomor whatsapplu cok
 const kapanbotaktif = '24 Jam'; // Kapan bot lu aktif
-const grupch1 = 'https://chat.whatsapp.com/IY7l7nccKqr0ojwtei6Dqb'; // OFFICIAL GRUP LU 1
-const grupch2 = 'https://chat.whatsapp.com/I3hEKaDBnPYL7fUmVwue6b'; // OFFICIAL GRUP LU 2
+const grupch1 = 'https://chat.whatsapp.com/FsAlnxqz6y2BhCQi5ayCLG'; // OFFICIAL GRUP LU 1
+const grupch2 = 'https://chat.whatsapp.com/KLW3UlFfeaH36Ucm5zRfCz'; // OFFICIAL GRUP LU 2
 //
 const
 {
@@ -67,7 +67,7 @@ conn.on('user-presence-update', json => console.log(`[ ${moment().format("HH:mm:
 conn.on('message-status-update', json =>
 {
    const participant = json.participant ? ' (' + json.participant + ')' : '' // participant exists when the message is from a group
-   console.log(`[ ${moment().format("HH:mm:ss")} ] => bot by @ariaputrapratama`)
+   console.log(`[ ${moment().format("HH:mm:ss")} ] => bot by @bintang_nur_pradana`)
 })
 
 conn.on('message-new', async(m) =>
@@ -118,17 +118,23 @@ conn.sendMessage(id, teks, MessageType.text)
 
 if (text.includes("#nulis")){
   const teks = text.replace(/#nulis /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/nulis?text=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
+axios.get(`https://mhankbarbar.herokuapp.com/nulis?text=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
     let hasil = `Download sendiri ya hasilnya dibawah, soalnya kalo dikirim langsung hasilnya blur\n\n${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
 
-
+if (text.includes("#ytmp3")){
+const teks = text.replace(/#ytmp3 /, "")
+axios.get(`https://mhankbarbar.herokuapp.com/api/yta?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
+    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
 
 if (text.includes("#yt")){
 const teks = text.replace(/#yt /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/ytv?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
+axios.get(`https://mhankbarbar.herokuapp.com/api/ytv?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
     let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -136,7 +142,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/ytv?url=${teks}&apiKey=Rr47iNuY
 
 if (text.includes("#fb")){
 const teks = text.replace(/#fb /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/epbe?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
+axios.get(`https://mhankbarbar.herokuapp.com/api/epbe?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
     let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nJudul: ${res.data.title}\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -144,7 +150,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/epbe?url=${teks}&apiKey=Rr47iNu
 
 if (text.includes("#ig")){
 const teks = text.replace(/#ig /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/ig?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
+axios.get(`https://mhankbarbar.herokuapp.com/api/ig?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
     let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -152,7 +158,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/ig?url=${teks}&apiKey=Rr47iNuYO
 
 if (text.includes("#twt")){
 const teks = text.replace(/#twt /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/twit?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
+axios.get(`https://mhankbarbar.herokuapp.com/api/twit?url=${teks}&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
     let hasil = `Download sendiri melalui link dibawah ya, takut servernya down xixi..\n\nJudul: ${res.data.title}\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -160,50 +166,11 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/twit?url=${teks}&apiKey=Rr47iNu
 
 if (text.includes("#wiki")){
 const teks = text.replace(/#wiki /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/wiki?q=${teks}&lang=id&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
+axios.get(`https://mhankbarbar.herokuapp.com/api/wiki?q=${teks}&lang=id&apiKey=zFuV88pxcIiCWuYlwg57`).then((res) => {
     let hasil = `Menurut Wikipedia:\n\n${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
-
-if (text.includes("#bkp")){
-const teks = text.replace(/#bkp /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/xnxx?url=${teks}&lang=id&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
-    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down..\n\n${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-
-}
-if (text.includes("#yta")){
-const teks = text.replace(/#yta /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/yta?url=${teks}&lang=id&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
-    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down.:\n\n${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
-
-if (text.includes("#quotes"))
-   {
-      var url = 'https://mhankbarbar.herokuapp.com/api/randomquotes'
-      axios.get(url)
-         .then((result) =>
-         {
-            let $ = cheerio.load(result.data);
-            var author = $('a[class="auteurfbnaam"]').contents().first().text();
-            var kata = $('q[class="fbquote"]').contents().first().text();
-
-            conn.sendMessage(
-               id,
-               `
-     _${kata}_
-        
-    
-	*~${author}*
-         `, MessageType.text
-            );
-
-         });
-   }
 
 if (text == '#help'){
 const corohelp = await get.get('https://covid19.mathdro.id/api/countries/id').json()
