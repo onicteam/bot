@@ -124,13 +124,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/nulis?text=${teks}&apiKey=Rr47iNuYO
 })
 }
 
-if (text.includes("#ytmp3")){
-const teks = text.replace(/#ytmp3 /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/yta?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
-    let hasil = `Download sendiri melalui link dibawah ya, takut servernya down ..\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
+
 
 if (text.includes("#yt")){
 const teks = text.replace(/#yt /, "")
