@@ -188,28 +188,13 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/yta?url=${teks}&lang=id&apiKey=
 })
 }
 
-if (text.includes("#quotes"))
-   {
-      var url = 'https://jagokata.com/kata-bijak/acak.html'
-      axios.get(url)
-         .then((result) =>
-         {
-            let $ = cheerio.load(result.data);
-            var author = $('a[class="auteurfbnaam"]').contents().first().text();
-            var kata = $('q[class="fbquote"]').contents().first().text();
-
-            conn.sendMessage(
-               id,
-               `
-     _${kata}_
-        
-    
-	*~${author}*
-         `, MessageType.text
-            );
-
-         });
-   }
+if (text.includes("#quetos")){
+const teks = text.replace(/#quetos /, "")
+axios.get(`https://jagokata.com/kata-bijak/acak.html`).then((res) => {
+    let hasil = `Menurut Wikipedia:\n\n${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
 
 if (text == '#help'){
 const corohelp = await get.get('https://covid19.mathdro.id/api/countries/id').json()
