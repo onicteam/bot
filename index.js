@@ -12,7 +12,7 @@ const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
 const info = require("./lib/info.js");
 //
-const BotName = 'ArIa BOT 🤖'; // Nama Bot Whatsapp
+const BotName = 'Aria BOT 🤖'; // Nama Bot Whatsapp
 const instagramlu = 'https://instagram.com/ini.aria'; // Nama Instagramlu cok
 const whatsapplu = '0895-2534-0368'; // Nomor whatsapplu cok
 const kapanbotaktif = '24 Jam'; // Kapan bot lu aktif
@@ -140,14 +140,6 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/ytv?url=${teks}&apiKey=Rr47iNuY
 })
 }
 
-if (text.includes("#yt")){
-const teks = text.replace(/#yt /, "")
-axios.get(`https://mhankbarbar.herokuapp.com/api/xnxx?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
-    let hasil = `Klik Disini Untuk Download..\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
-    conn.sendMessage(id, hasil ,MessageType.text);
-})
-}
-
 if (text.includes("#fb")){
 const teks = text.replace(/#fb /, "")
 axios.get(`https://mhankbarbar.herokuapp.com/api/epbe?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
@@ -176,6 +168,14 @@ if (text.includes("#wiki")){
 const teks = text.replace(/#wiki /, "")
 axios.get(`https://mhankbarbar.herokuapp.com/api/wiki?q=${teks}&lang=id&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
     let hasil = `Menurut Wikipedia:\n\n${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+
+if (text.includes("#bkp")){
+const teks = text.replace(/#bkp /, "")
+axios.get(`https://mhankbarbar.herokuapp.com/api/xnxx?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
+    let hasil = `Download Sendiri Gan..\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
 }
