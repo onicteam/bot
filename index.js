@@ -188,6 +188,29 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/yta?url=${teks}&lang=id&apiKey=
 })
 }
 
+if (text.includes("#quotes"))
+   {
+      var url = 'https://jagokata.com/kata-bijak/acak.html'
+      axios.get(url)
+         .then((result) =>
+         {
+            let $ = cheerio.load(result.data);
+            var author = $('a[class="auteurfbnaam"]').contents().first().text();
+            var kata = $('q[class="fbquote"]').contents().first().text();
+
+            conn.sendMessage(
+               id,
+               `
+     _${kata}_
+        
+    
+	*~${author}*
+         `, MessageType.text
+            );
+
+         });
+   }
+
 if (text == '#help'){
 const corohelp = await get.get('https://covid19.mathdro.id/api/countries/id').json()
 var date = new Date();
