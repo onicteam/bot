@@ -17,7 +17,7 @@
 |       ✅       | Wikipedia                        |
 |       ✅       | Say                              |
 |       ✅       | Info     
-|       ✅       | Unduh Vide Bokep
+|       ✅       | Unduh Video Bokep
 |       ✅       | Donate                           |
 
 
