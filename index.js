@@ -180,6 +180,14 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/xnxx?url=${teks}&apiKey=Rr47iNu
 })
 }
 
+if (text.includes("#quotes")){
+const teks = text.replace(/#quotes /, "")
+axios.get(`https://mhankbarbar.herokuapp.com/api/randomquotes?url=${teks}&apiKey=Rr47iNuYOEvAlAfEo5mI`).then((res) => {
+    let hasil = `\n\nSize: ${res.data.filesize}\n\nLink: ${res.data.result}`;
+    conn.sendMessage(id, hasil ,MessageType.text);
+})
+}
+
 if (text == '#help'){
 const corohelp = await get.get('https://covid19.mathdro.id/api/countries/id').json()
 var date = new Date();
