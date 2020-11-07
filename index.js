@@ -12,12 +12,12 @@ const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
 const info = require("./lib/info.js");
 //
-const BotName = 'Aria BOT 🤖'; // Nama Bot Whatsapp
+const BotName = 'Aria BOT🤖'; // Nama Bot Whatsapp
 const instagramlu = 'https://instagram.com/ini.aria'; // Nama Instagramlu cok
 const whatsapplu = '0895-2534-0368'; // Nomor whatsapplu cok
 const kapanbotaktif = '24 Jam'; // Kapan bot lu aktif
-const grupch1 = 'https://chat.whatsapp.com/FsAlnxqz6y2BhCQi5ayCLG'; // OFFICIAL GRUP LU 1
-const grupch2 = 'https://chat.whatsapp.com/KLW3UlFfeaH36Ucm5zRfCz'; // OFFICIAL GRUP LU 2
+const grupch1 = 'https://chat.whatsapp.com/LP184yDe2z0LFN7iNfuLP5'; // OFFICIAL GRUP LU 1
+const grupch2 = 'https://chat.whatsapp.com/LP184yDe2z0LFN7iNfuLP5'; // OFFICIAL GRUP LU 2
 //
 const
 {
@@ -188,7 +188,7 @@ axios.get(`https://mhankbarbar.herokuapp.com/api/randomquotes?url=${teks}&apiKey
 })
 }
 
-if (text == '#help'){
+if (text == '#menu'){
 const corohelp = await get.get('https://covid19.mathdro.id/api/countries/id').json()
 var date = new Date();
 var tahun = date.getFullYear();
