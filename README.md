@@ -21,6 +21,16 @@
 |       ✅       | Donate                           |
 
 
+| Aria BOT🤖     |                ComingSoon        |
+| :-----------: | :--------------------------------: |
+|       ❌       | Image Anime Hentai                  |
+|       ❌       | Media Fire Downloader
+|       ❌       | Chord Gitar
+
+
+
+
+       
 ## Special Thanks to
 * [`Aria Putra Pratama`](https://wa.me+6289525340368)
 
